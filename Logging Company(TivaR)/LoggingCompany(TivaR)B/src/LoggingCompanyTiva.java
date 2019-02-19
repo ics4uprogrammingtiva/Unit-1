@@ -1,4 +1,12 @@
 import java.util.Scanner;
+/*
+ * Created by: Tiva Rait
+ * Created on: 09-Feb-2019
+ * Created for: ICS4U
+ * Daily Assignment – Day #4 Logging Company
+ * This program allows the user to enter a log size and...
+ * ... be told how many logs can fit on a truck.
+*/
 
 public class LoggingCompanyTiva {
 
