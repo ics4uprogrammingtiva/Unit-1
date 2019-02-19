@@ -7,6 +7,14 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 
+/*
+ * Created by: Tiva Rait
+ * Created on: 02-Feb-2019
+ * Created for: ICS4U
+ * Daily Assignment – Day #4 (Einstein's Equation)
+ * This program let's the user enter the mass of an object and...
+ * ...calculates how much energy can be released from that object
+ */
 public class EinGUI {
 
 	protected Shell shell;
@@ -61,14 +69,7 @@ public class EinGUI {
 		lblAnswer.setAlignment(SWT.CENTER);
 		lblAnswer.setBounds(10, 186, 414, 15);
 		lblAnswer.setText("Answer ");
-		/*
-		 * Created by: Tiva Rait
-		 * Created on: 02-Feb-2019
-		 * Created for: ICS4U
-		 * Daily Assignment – Day #4 (Einstein's Equation)
-		 * This program let's the user enter the mass of an object and...
-		 * ...calculates how much energy can be released from that object
-		 */
+		
 		
 		Button btnCalculate = new Button(shell, SWT.NONE);
 		btnCalculate.addSelectionListener(new SelectionAdapter() {
