@@ -1,4 +1,11 @@
 import java.awt.EventQueue;
+/*
+ * Created by: Tiva Rait
+ * Created on: 06-Sept-2019
+ * Created for: ICS4U
+ * Daily Assignment – Day #3 Logging Problem
+ * This program calculates how many logs you can fit on a truck based on their size. 
+*/
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -59,13 +66,7 @@ public class LoggingCompanyTRGUI {
 		txtLogSize.setBounds(157, 115, 86, 20);
 		frame.getContentPane().add(txtLogSize);
 		txtLogSize.setColumns(10);
-		/*
-		 * Created by: Tiva Rait
-		 * Created on: 06-Sept-2019
-		 * Created for: ICS4U
-		 * Daily Assignment – Day #3 Logging Problem
-		 * This program calculates how many logs you can fit on a truck based on their size. 
-		*/
+		
 		
 		JButton btnCalculate = new JButton("Calculate");
 		btnCalculate.addActionListener(new ActionListener() {
