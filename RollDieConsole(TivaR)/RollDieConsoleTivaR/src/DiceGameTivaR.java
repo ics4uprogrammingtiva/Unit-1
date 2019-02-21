@@ -45,9 +45,14 @@ public class DiceGameTivaR {
 	/**
 	 * Create the application.
 	 */
+	
+	// My global variables
+		int randomNumber = (int)((Math.random() * 5) + 1 );
+		int userGuess;
+		int numOfGuesses = 0;
+			
 	public DiceGameTivaR() {
 		initialize();
-		int randomNumber = (int)((Math.random() * 5) + 1 );
 	}
 
 	/**
@@ -106,13 +111,36 @@ public class DiceGameTivaR {
 				// Get the users guess
 				String userGuessString = txtUserGuess.getText();
 				
-				int userGuess = Integer.parseInt(userGuessString);
+				int guessInput = Integer.parseInt(userGuessString);
+				
+				if (guessInput == randomNumber)
+				{
+					// Show all of the labels except lblWrong
+					lblNumberOfGuesses.setVisible(true);
+					lblAnswerRandomNumber.setVisible(true);
+					lblCorrect.setVisible(true);
+					lblWrong.setVisible(false);
+					// Tell user how many guesses it took
+					lblAnswerRandomNumber.setText("Random Number: "+ randomNumber);
+					// Tell user what the correct answer was
+					lblNumberOfGuesses.setText("Number of guesses before correct: "+ numOfGuesses);
+				}
+				else
+				{
+					// Make sure all labels are hidden except lblWrong
+					lblNumberOfGuesses.setVisible(false);
+					lblAnswerRandomNumber.setVisible(false);
+					lblCorrect.setVisible(false);
+					lblWrong.setVisible(true);
+					
+					// Add a guess to their guess counter
+					numOfGuesses = numOfGuesses + 1;
+				}
 			}
 		});
 		btnGuess.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnGuess.setBounds(20, 104, 149, 23);
 		frame.getContentPane().add(btnGuess);
-		
 		
 	}
 }
