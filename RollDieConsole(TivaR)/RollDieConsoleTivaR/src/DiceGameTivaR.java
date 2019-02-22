@@ -17,6 +17,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class DiceGameTivaR {
+	/*
+	 * Created by: Tiva Rait
+	 * Created on: 22-Feb-2019
+	 * Created for: ICS4U
+	 * Daily Assignment – Day #8 Dice game
+	 * This program generates a random number and then asks the user...
+	 * ...to guess the number. Then it tells the user how many guesses...
+	 * ...it took to get guess the correct answer.
+	*/
 
 	private JFrame frame;
 	private JTextField txtUserGuess;
@@ -73,11 +82,11 @@ public class DiceGameTivaR {
 		frame.getContentPane().add(lblInformation);
 		
 		JLabel lblQuestion = new JLabel("What number do you think it is?");
-		lblQuestion.setBounds(10, 76, 156, 17);
+		lblQuestion.setBounds(10, 76, 211, 17);
 		frame.getContentPane().add(lblQuestion);
 		
 		txtUserGuess = new JTextField();
-		txtUserGuess.setBounds(176, 74, 86, 20);
+		txtUserGuess.setBounds(231, 74, 86, 20);
 		frame.getContentPane().add(txtUserGuess);
 		txtUserGuess.setColumns(10);
 		
@@ -91,12 +100,12 @@ public class DiceGameTivaR {
 		
 		lblCorrect = new JLabel("Correct!!!");
 		lblCorrect.setHorizontalAlignment(SwingConstants.LEFT);
-		lblCorrect.setBounds(10, 173, 149, 14);
+		lblCorrect.setBounds(10, 173, 414, 14);
 		frame.getContentPane().add(lblCorrect);
 		
 		lblWrong = new JLabel("Sorry that answer is wrong");
 		lblWrong.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWrong.setBounds(10, 142, 149, 14);
+		lblWrong.setBounds(10, 142, 414, 14);
 		frame.getContentPane().add(lblWrong);
 		
 		// Hide all of the labels that I don't want to see
