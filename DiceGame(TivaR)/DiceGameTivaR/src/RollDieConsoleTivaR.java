@@ -9,13 +9,16 @@ import java.util.Scanner;
 */
 
 // Not finished this day work on it more at home. 
-// Need to get real random number and I have to add a try catch
+// Need to make an if else statement to output "Invalid please enter number"...
+//...if the user enters something other than a number
+// then you need to test this day
 public class RollDieConsoleTivaR {
 
 	public static void main(String[] args) {
 		// Variables
 		int maxValue;
 		int minValue;
+		int range;
 		
 		// To get users answer from the console
 		Scanner input = new Scanner(System.in);
@@ -30,8 +33,11 @@ public class RollDieConsoleTivaR {
 		// Get answer from console
 		minValue = input.nextInt();
 		
+		// To get the range that should be used
+		range = ((maxValue - minValue)+1);
 		
-		int randomNumber = RollDie(minValue, maxValue);
+		// To call the procedure
+		int randomNumber = RollDie(minValue, range);
 		
 		
 		// Display the random number to the user
@@ -43,9 +49,10 @@ public class RollDieConsoleTivaR {
 	}
 	
 	// Put Procedure here
-			public static int RollDie( int minValue, int maxValue)
+			public static int RollDie( int minValue, int range)
 			{
-				int randomNumber = 1; 
+				int randomNumber = (int)((Math.random() * range ) + minValue); 
+				
 				return randomNumber;
 			}
 
