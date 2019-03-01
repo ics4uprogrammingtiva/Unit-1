@@ -8,10 +8,6 @@ import java.util.Scanner;
  * ... 1 and maxValue and place the value in the console.
 */
 
-// Not finished this day work on it more at home. 
-// Need to make an if else statement to output "Invalid please enter number"...
-//...if the user enters something other than a number
-// then you need to test this day
 public class RollDieConsoleTivaR {
 
 	public static void main(String[] args) {
