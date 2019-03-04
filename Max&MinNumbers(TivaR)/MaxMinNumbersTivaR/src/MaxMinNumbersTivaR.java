@@ -18,9 +18,6 @@ import java.awt.event.ActionEvent;
  * was and what the lowest number it generated was.
 */
 
-// I have so many errors I should fix it
-// Tiva don't forget to fix it
-
 public class MaxMinNumbersTivaR {
 
 	private JFrame frame;
@@ -84,21 +81,20 @@ public class MaxMinNumbersTivaR {
 				
 				
 				// Declare array size
-				int[] randomNumbers = new int[9];
+				int[] randomNumbers = new int[10];
 				
 				// Loop to get randomly generated numbers
-				for (int i = 0; i < 10; i++)
+				for (int index = 0; index < 10; index++)
 				{
 					newRandomNumber = GenerateRandomNumber(RANGE, MINIMUM);
 					
 					// Parse the answer of newrandomNumber to put in list
 					lstRandomNumbers.add(Integer.toString(newRandomNumber));
-					
+
 					// Add to array
-					randomNumbers[i] = newRandomNumber;
+					randomNumbers[index] = newRandomNumber;
 					
 				}
-				
 				// Get the highest and lowest numbers in the array
 				highestNum = GetMaxValue(randomNumbers);
 				
@@ -108,8 +104,7 @@ public class MaxMinNumbersTivaR {
 				lblLowestNumber.setText("Lowest: " + lowestNum);
 				lblHighestNumber.setText("Highest: " + highestNum );
 				
-				// Test to see if program is working 
-				System.out.println("I am working");
+				btnGenerateRandomNumber.setEnabled(false);
 			}
 		});
 		btnGenerateRandomNumber.setBounds(30, 30, 177, 46);
@@ -149,8 +144,10 @@ public class MaxMinNumbersTivaR {
 	//Procedure to get the lowest number in the array
 		public static int GetMinValue (int[] randomNumbers)
 		{
-			int minValue = 0;
+			// I set this to be 100 because I know it will change.
+			int minValue = 100;
 			int currentValue;
+			
 			
 			for (int i = 0; i < 10; i++)
 			{
