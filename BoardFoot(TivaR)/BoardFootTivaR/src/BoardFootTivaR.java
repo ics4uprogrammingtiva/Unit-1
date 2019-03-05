@@ -1,16 +1,24 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 /*
  * Created by: Tiva Rait
  * Created on: 04-Mar-2019
  * Created for: ICS4U
- * Daily Assignment – Day #
- * This program ...
+ * Daily Assignment – Day #11 Board Foot
+ * This program...
 */
 public class BoardFootTivaR {
 
 	private JFrame frame;
+	private JTextField txtFirstDimension;
+	private JTextField txtSecondDimension;
 
 	/**
 	 * Launch the application.
@@ -42,6 +50,51 @@ public class BoardFootTivaR {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblInstructionFirstDimension = new JLabel("Enter First Dimension");
+		lblInstructionFirstDimension.setHorizontalAlignment(SwingConstants.CENTER);
+		lblInstructionFirstDimension.setBounds(25, 86, 137, 14);
+		frame.getContentPane().add(lblInstructionFirstDimension);
+		
+		txtFirstDimension = new JTextField();
+		txtFirstDimension.setBounds(48, 112, 86, 20);
+		frame.getContentPane().add(txtFirstDimension);
+		txtFirstDimension.setColumns(10);
+		
+		JLabel lblInstructionSecondDimension = new JLabel("Enter Second Dimension");
+		lblInstructionSecondDimension.setHorizontalAlignment(SwingConstants.CENTER);
+		lblInstructionSecondDimension.setBounds(219, 86, 137, 14);
+		frame.getContentPane().add(lblInstructionSecondDimension);
+		
+		txtSecondDimension = new JTextField();
+		txtSecondDimension.setBounds(244, 112, 86, 20);
+		frame.getContentPane().add(txtSecondDimension);
+		txtSecondDimension.setColumns(10);
+		
+		JLabel lblThirdDimensionAnswer = new JLabel("Third Dimension: ");
+		lblThirdDimensionAnswer.setBounds(10, 212, 346, 14);
+		frame.getContentPane().add(lblThirdDimensionAnswer);
+		
+		JButton btnCalculate = new JButton("Calculate");
+		btnCalculate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// Define local variables
+				
+				// Get the variables from the first and second dimension boxes
+				
+				// Call the CalculateBoardFoot() They should take the first dimension and the second dimension
+				// And return an answer. The answer being the third length
+				
+				
+				// Show the answer if it returns an answer of 1
+			}
+		});
+		btnCalculate.setBounds(140, 154, 89, 23);
+		frame.getContentPane().add(btnCalculate);
+		
+		
 	}
-
+	
+	// Function 
 }
