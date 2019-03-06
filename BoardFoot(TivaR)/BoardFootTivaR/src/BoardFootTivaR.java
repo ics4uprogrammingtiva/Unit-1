@@ -12,7 +12,8 @@ import java.awt.event.ActionEvent;
  * Created on: 04-Mar-2019
  * Created for: ICS4U
  * Daily Assignment – Day #11 Board Foot
- * This program...
+ * This program tells you what the third dimension should be...
+ * ... so the total can be one board foot
 */
 public class BoardFootTivaR {
 
@@ -75,19 +76,27 @@ public class BoardFootTivaR {
 		JLabel lblThirdDimensionAnswer = new JLabel("Third Dimension: ");
 		lblThirdDimensionAnswer.setBounds(10, 212, 346, 14);
 		frame.getContentPane().add(lblThirdDimensionAnswer);
+		lblThirdDimensionAnswer.setVisible(false);
 		
 		JButton btnCalculate = new JButton("Calculate");
 		btnCalculate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Define local variables
+				int firstDimension;
+				int secondDimension;
+				int thirdDimension;
 				
 				// Get the variables from the first and second dimension boxes
+				firstDimension = Integer.parseInt(txtFirstDimension.getText());
+				secondDimension = Integer.parseInt(txtSecondDimension.getText());
 				
-				// Call the CalculateBoardFoot() They should take the first dimension and the second dimension
-				// And return an answer. The answer being the third length
+				// Call the CalculateBoardFoot()
+				thirdDimension = CalculateBoardFoot(firstDimension, secondDimension);
 				
+				// show the thirdDimension
+				lblThirdDimensionAnswer.setVisible(true);
+				lblThirdDimensionAnswer.setText("Third Dimension: "+ thirdDimension + " inches ^3" );
 				
-				// Show the answer if it returns an answer of 1
 			}
 		});
 		btnCalculate.setBounds(140, 154, 89, 23);
@@ -96,5 +105,17 @@ public class BoardFootTivaR {
 		
 	}
 	
-	// Function 
+	// Functions
+	
+	// Calculates to try and find the third dimension
+	public static int CalculateBoardFoot(int length , int width)
+	{
+		// Variable
+		int answer;
+		
+		// Calculate
+		answer = (144/ (length * width));
+		
+		return (answer);
+	}
 }
