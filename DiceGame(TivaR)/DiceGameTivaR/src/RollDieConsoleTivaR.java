@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 /*
  * Created by: Tiva Rait
@@ -19,7 +20,7 @@ public class RollDieConsoleTivaR {
 		// To get users answer from the console
 		Scanner input = new Scanner(System.in);
 		
-		// Ask question in the console
+		// Ask question in the console 
 		System.out.println("Please enter a max value for the random number:");
 		// Get the answer from the console
 		maxValue = input.nextInt();
@@ -41,8 +42,7 @@ public class RollDieConsoleTivaR {
 		
 		// Close the input
 		input.close();
-
-	}
+	} 
 	
 	// Put Procedure here
 			public static int RollDie( int minValue, int range)
