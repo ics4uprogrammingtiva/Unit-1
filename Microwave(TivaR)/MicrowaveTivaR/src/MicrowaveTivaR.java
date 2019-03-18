@@ -163,7 +163,7 @@ public class MicrowaveTivaR {
 				}
 				
 				//Give the answer 
-				lblAnswer.setText("Your food should be placed in for "+ answer);
+				lblAnswer.setText("Your food should be placed in for "+ answer + " seconds.");
 					
 			}
 		});
@@ -198,7 +198,7 @@ public class MicrowaveTivaR {
 				}
 				
 				//Give the answer 
-				lblAnswer.setText("Your food should be placed in for "+ answer);
+				lblAnswer.setText("Your food should be placed in for "+ answer + " seconds.");
 			}
 		});
 		btnTwoItems.setBounds(143, 113, 89, 23);
@@ -232,7 +232,7 @@ public class MicrowaveTivaR {
 				}
 				
 				//Give the answer 
-				lblAnswer.setText("Your food should be placed in for "+ answer);
+				lblAnswer.setText("Your food should be placed in for "+ answer + " seconds.");
 				
 			}
 		});
