@@ -32,11 +32,16 @@ public class MultiDimensionalArray {
 	public MultiDimensionalArray() {
 		initialize();
 	}
+	
+	
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,9 +58,69 @@ public class MultiDimensionalArray {
 		JButton btnClassAverage = new JButton("Get Class Average");
 		btnClassAverage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				// Variables
+				int classAverage;
+				int studentIndex;
+				int markIndex;
+				int numStudents = 4;
+				int numAssignments = 6;
+				
+				// Numbers to generate random grades
+				int MAXIMUM = 100;
+				int MINIMUM = 0;
+				int RANGE = (MAXIMUM - MINIMUM);
+				
+				// Create 2D array
+				int [][] classMarks = new int [4][6];
+				
+				// Populate the array with randomly generated numbers 
+				for (studentIndex = 0; studentIndex <= numStudents - 1; studentIndex++)
+				{
+					for (markIndex = 0; markIndex <= numAssignments - 1; markIndex++)
+					{
+						// Randomly generate a mark for each assignment for each student
+						classMarks[studentIndex][markIndex] = (int)((Math.random()* RANGE) + MINIMUM);
+					}
+				}
+				
+				// Call the CalculateAverage function
+				// Return the classAverage
+				classAverage = CalculateClassAverage(classMarks);
+				
+				// Display class average
+				lblClassAverage.setText("The class average is: " + classAverage);
 			}
 		});
 		btnClassAverage.setBounds(156, 103, 131, 23);
 		frame.getContentPane().add(btnClassAverage);
+		
+		
+	}
+	
+	public static int CalculateClassAverage (int[][] classMarks)
+	{
+		int overallAverage = 0;
+		int individAverage;
+		
+		int bigIndex;
+		int smallIndex;
+		
+		for (bigIndex = 0; bigIndex <= 4 -1; bigIndex++)
+		{
+			individAverage = 0;
+			
+			for (smallIndex = 0; smallIndex <= 6 -1; smallIndex++)
+			{
+				individAverage = (individAverage + classMarks[bigIndex][smallIndex]);
+			}
+			
+			individAverage = (individAverage/6);
+			overallAverage = (overallAverage + individAverage);
+		}
+		
+		overallAverage = (overallAverage/4);
+		
+		return overallAverage;
 	}
 }
