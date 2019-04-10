@@ -6,6 +6,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/*
+ * Created by: Tiva Rait
+ * Created on: 10-April-2019
+ * Created for: ICS4U
+ * Daily Assignment – Day #13 Multi Dimensional Arrays
+ * This program Generates random numbers to serve as "marks" for students...
+ * ... Then it passes the array into a function where it calculates the class average.
+*/
 public class MultiDimensionalArray {
 
 	private JFrame frame;
@@ -92,7 +100,7 @@ public class MultiDimensionalArray {
 				lblClassAverage.setText("The class average is: " + classAverage);
 			}
 		});
-		btnClassAverage.setBounds(156, 103, 131, 23);
+		btnClassAverage.setBounds(148, 103, 157, 23);
 		frame.getContentPane().add(btnClassAverage);
 		
 		
