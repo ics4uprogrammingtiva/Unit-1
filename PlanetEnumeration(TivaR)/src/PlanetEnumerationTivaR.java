@@ -13,24 +13,11 @@ import java.awt.event.ActionEvent;
  * Created on: 10-April-2019
  * Created for: ICS4U
  * Daily Assignment – Day #14 Planet Enumeration
- * This program ...
+ * This program Uses enumeration to assign values to planets.
 */
 public class PlanetEnumerationTivaR {
 
-	enum planets
-	{
-		mercury,
-		venus,
-		earth,
-		Mars,
-		Jupiter,
-		Saturn,
-		Uranus,
-		Neptune
-		
-		
-		
-	}
+	 
 	private JFrame frame;
 
 	/**
@@ -55,6 +42,29 @@ public class PlanetEnumerationTivaR {
 	public PlanetEnumerationTivaR() {
 		initialize();
 	}
+	
+	// Create enum
+	public enum planetsEnum 
+	{
+		mercury (1),
+		venus (2),
+		earth (3),
+		Mars (4),
+		Jupiter (5),
+		Saturn (6),
+		Uranus (7),
+		Neptune (8),
+		Pluto (9);
+		
+		public int order;
+		
+		planetsEnum (int order)
+		{
+			this.order = order;
+		}
+			
+		
+	}
 
 	/**
 	 * Initialize the contents of the frame.
@@ -67,17 +77,18 @@ public class PlanetEnumerationTivaR {
 	
 		JList lstPlanets = new JList();
 		lstPlanets.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"};
+			String[] planetsInList = new String[] {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"};
 			public int getSize() {
-				return values.length;
-			}
+				return planetsInList.length;
+				}
 			public Object getElementAt(int index) {
-				return values[index];
+				return planetsInList[index];
 			}
 		});
 		lstPlanets.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		lstPlanets.setBounds(36, 36, 222, 182);
 		frame.getContentPane().add(lstPlanets);
+		
 		
 		JButton btnTravelHere = new JButton("Travel Here");
 		btnTravelHere.addActionListener(new ActionListener() {
