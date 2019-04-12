@@ -5,9 +5,14 @@ import javax.swing.JPanel;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 import javax.swing.AbstractListModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
 /*
  * Created by: Tiva Rait
  * Created on: 10-April-2019
@@ -76,16 +81,29 @@ public class PlanetEnumerationTivaR {
 		frame.getContentPane().setLayout(null);
 	
 		JList lstPlanets = new JList();
-		lstPlanets.setModel(new AbstractListModel() {
-			String[] planetsInList = new String[] {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"};
-			public int getSize() {
-				return planetsInList.length;
-				}
-			public Object getElementAt(int index) {
-				return planetsInList[index];
+		
+		// These are all of the planets I need in my list
+		DefaultListModel planetsInList= new DefaultListModel();
+		planetsInList.addElement("Mercury");
+		planetsInList.addElement("Venus");
+		planetsInList.addElement("Earth");
+		planetsInList.addElement("Mars");
+		planetsInList.addElement("Jupiter");
+		planetsInList.addElement("Saturn");
+		planetsInList.addElement("Uranus");
+		planetsInList.addElement("Neptune");
+		planetsInList.addElement("Pluto");
+		lstPlanets.setModel(planetsInList);
+				
+				lstPlanets.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+				
+		lstPlanets.addListSelectionListener(new ListSelectionListener() {	
+			public void valueChanged(ListSelectionEvent arg0) {
+				//String Test;
+				//Test = lstPlanets.getSelectedIndex();
 			}
 		});
-		lstPlanets.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
 		lstPlanets.setBounds(36, 36, 222, 182);
 		frame.getContentPane().add(lstPlanets);
 		
@@ -93,8 +111,14 @@ public class PlanetEnumerationTivaR {
 		JButton btnTravelHere = new JButton("Travel Here");
 		btnTravelHere.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				// Test to add the planets to the list
+				 
 				
 				// Variables
+				
+				
+				// If statement to determine which planet user selected.
+				
 				
 				
 			}
