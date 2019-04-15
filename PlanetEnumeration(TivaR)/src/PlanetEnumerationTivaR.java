@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultListModel;
@@ -51,22 +52,22 @@ public class PlanetEnumerationTivaR {
 	// Create enum
 	public enum planetsEnum 
 	{
-		mercury (1),
-		venus (2),
-		earth (3),
-		Mars (4),
-		Jupiter (5),
-		Saturn (6),
-		Uranus (7),
-		Neptune (8),
-		Pluto (9);
+		Mercury,
+		Venus,
+		Earth,
+		Mars,
+		Jupiter,
+		Saturn,
+		Uranus,
+		Neptune,
+		Pluto;
 		
-		public int order;
+		//public int order;
 		
-		planetsEnum (int order)
-		{
-			this.order = order;
-		}
+		//planetsEnum (int order)
+		//{
+		//	this.order = order;
+		//}
 			
 		
 	}
@@ -81,26 +82,37 @@ public class PlanetEnumerationTivaR {
 		frame.getContentPane().setLayout(null);
 	
 		JList lstPlanets = new JList();
-		
 		// These are all of the planets I need in my list
 		DefaultListModel planetsInList= new DefaultListModel();
-		planetsInList.addElement("Mercury");
-		planetsInList.addElement("Venus");
-		planetsInList.addElement("Earth");
-		planetsInList.addElement("Mars");
-		planetsInList.addElement("Jupiter");
-		planetsInList.addElement("Saturn");
-		planetsInList.addElement("Uranus");
-		planetsInList.addElement("Neptune");
-		planetsInList.addElement("Pluto");
+		planetsInList.addElement(planetsEnum.Mercury);
+		planetsInList.addElement(planetsEnum.Venus);
+		planetsInList.addElement(planetsEnum.Earth);
+		planetsInList.addElement(planetsEnum.Mars);
+		planetsInList.addElement(planetsEnum.Jupiter);
+		planetsInList.addElement(planetsEnum.Saturn);
+		planetsInList.addElement(planetsEnum.Uranus);
+		planetsInList.addElement(planetsEnum.Neptune);
+		planetsInList.addElement(planetsEnum.Pluto);
 		lstPlanets.setModel(planetsInList);
 				
-				lstPlanets.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		lstPlanets.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 				
 		lstPlanets.addListSelectionListener(new ListSelectionListener() {	
 			public void valueChanged(ListSelectionEvent arg0) {
-				//String Test;
-				//Test = lstPlanets.getSelectedIndex();
+				Object selectedChoiceObj;
+				selectedChoiceObj = lstPlanets.getSelectedIndex();
+				System.out.println("I am working " + selectedChoiceObj);
+				
+				System.out.println("This thing" + planetsEnum.Mercury);
+				System.out.println("This other thing" + selectedChoiceObj); 
+				
+				int selectedChoiceint = (Integer) selectedChoiceObj;
+				if (selectedChoiceint == 0  )
+				{
+					JOptionPane.showMessageDialog(null, "You would like to go to Mercury " + planetsEnum.Mercury.ordinal());
+					
+				}
+
 			}
 		});
 
@@ -108,14 +120,14 @@ public class PlanetEnumerationTivaR {
 		frame.getContentPane().add(lstPlanets);
 		
 		
-		JButton btnTravelHere = new JButton("Travel Here");
-		btnTravelHere.addActionListener(new ActionListener() {
+		JButton btnJustEarth = new JButton("Travel Here");
+		btnJustEarth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Test to add the planets to the list
 				 
 				
 				// Variables
-				
+				//String planetSelected
 				
 				// If statement to determine which planet user selected.
 				
@@ -123,8 +135,8 @@ public class PlanetEnumerationTivaR {
 				
 			}
 		});
-		btnTravelHere.setBounds(281, 152, 114, 23);
-		frame.getContentPane().add(btnTravelHere);
+		btnJustEarth.setBounds(281, 152, 114, 23);
+		frame.getContentPane().add(btnJustEarth);
 		
 	}
 }
