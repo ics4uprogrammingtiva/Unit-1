@@ -100,17 +100,56 @@ public class PlanetEnumerationTivaR {
 		lstPlanets.addListSelectionListener(new ListSelectionListener() {	
 			public void valueChanged(ListSelectionEvent arg0) {
 				Object selectedChoiceObj;
+				int selectedChoiceInt = 0;
+				int planetNumber = 0;
 				selectedChoiceObj = lstPlanets.getSelectedIndex();
-				System.out.println("I am working " + selectedChoiceObj);
+				selectedChoiceInt = (Integer) selectedChoiceObj;
+				selectedChoiceInt = (selectedChoiceInt + 1);
 				
-				System.out.println("This thing" + planetsEnum.Mercury);
-				System.out.println("This other thing" + selectedChoiceObj); 
-				
-				int selectedChoiceint = (Integer) selectedChoiceObj;
-				if (selectedChoiceint == 0  )
+				if (selectedChoiceInt == 1)
 				{
-					JOptionPane.showMessageDialog(null, "You would like to go to Mercury " + planetsEnum.Mercury.ordinal());
-					
+					planetNumber = (planetsEnum.Mercury.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Mercury. Planet #" + planetNumber);
+				}
+				if (selectedChoiceInt == 2)
+				{
+					planetNumber = (planetsEnum.Venus.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Venus. Planet #" + planetNumber);
+				}
+				if (selectedChoiceInt == 3)
+				{
+					planetNumber = (planetsEnum.Earth.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Earth. Planet #" + planetNumber);
+				}
+				if (selectedChoiceInt == 4)
+				{
+					planetNumber = (planetsEnum.Mars.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Mars. Planet #" + planetNumber);
+				}
+				if (selectedChoiceInt == 5)
+				{
+					planetNumber = (planetsEnum.Jupiter.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Jupiter. Planet #" + planetNumber);
+				}
+				if (selectedChoiceInt == 6)
+				{
+					planetNumber = (planetsEnum.Saturn.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Saturn. Planet #" + planetNumber);
+				}
+				if (selectedChoiceInt == 7)
+				{
+					planetNumber = (planetsEnum.Uranus.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Uranus. Planet #" + planetNumber);
+				}
+				if (selectedChoiceInt == 8)
+				{
+					planetNumber = (planetsEnum.Neptune.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Neptune. Planet #" + planetNumber);
+				}
+				if (selectedChoiceInt == 9)
+				{
+					planetNumber = (planetsEnum.Pluto.ordinal() + 1);
+					JOptionPane.showMessageDialog(null, "You would like to go to Pluto. Planet #" + planetNumber);
 				}
 
 			}
@@ -120,19 +159,12 @@ public class PlanetEnumerationTivaR {
 		frame.getContentPane().add(lstPlanets);
 		
 		
-		JButton btnJustEarth = new JButton("Travel Here");
+		JButton btnJustEarth = new JButton("Just Earth");
 		btnJustEarth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Test to add the planets to the list
-				 
-				
-				// Variables
-				//String planetSelected
-				
-				// If statement to determine which planet user selected.
-				
-				
-				
+				int planetNumber = (planetsEnum.Earth.ordinal() + 1);
+				JOptionPane.showMessageDialog(null, "You would like to stay on Earth. Planet #" + planetNumber);
 			}
 		});
 		btnJustEarth.setBounds(281, 152, 114, 23);
